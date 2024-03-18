@@ -5,14 +5,7 @@ import TextForm from "./components/TextForm";
 import Aboutme from "./components/Aboutme";
 import Alert from "./components/Alert";
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light"); // Enable wheather darkmode or not
@@ -41,28 +34,31 @@ function App() {
   };
   return (
     <>
-      <Alert alert={alert} />
-      <BrowserRouter>
-        <Navbar
+    <Navbar
           title="Hello pakistan"
           aboutText="Hello About"
           mode={mode}
           togglemode={settogglemode}
         />
-        <Routes>
-          <Route path="/about" element={<Aboutme />}></Route>
-          <Route
-            path="text"
-            element={
-              <TextForm
+      <Alert alert={alert} />
+      <Aboutme />
+      <TextForm
                 showalert={showalert}
                 heading="This is a Headings"
                 mode={mode}
               />
+      {/* <BrowserRouter>
+        
+        <Routes>
+          <Route path="/about" element={}></Route>
+          <Route
+            path="text"
+            element={
+             
             }
           ></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   );
 }
